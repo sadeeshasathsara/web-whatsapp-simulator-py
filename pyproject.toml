@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whatsapp-simulator"
+version = "0.1.0"
+description = "A stealth, headless/headed WhatsApp Web automation library and interactive CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "playwright>=1.40.0",
+    "rich>=13.0.0",
+    "questionary>=2.0.0",
+    "prompt_toolkit>=3.0.0",
+    "nest_asyncio>=1.6.0",
+]
+
+[project.scripts]
+whatsapp-cli = "cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["whatsapp*", "cli*"]
